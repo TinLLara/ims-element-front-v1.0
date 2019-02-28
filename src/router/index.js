@@ -30,7 +30,7 @@ export const constantRouterMap = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    name: 'Dashboard',
+    name: 'dashboard',
     hidden: true,
     children: [{
       path: 'dashboard',
@@ -43,13 +43,31 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: '系统管理', icon: 'example' },
     children: [
       {
         path: 'table',
-        name: 'Table',
+        name: 'user-manage',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: '用户管理', icon: 'table' }
+      },
+      {
+        path: 'table',
+        name: 'role-manage',
+        component: () => import('@/views/table/index'),
+        meta: { title: '角色管理', icon: 'table' }
+      },
+      {
+        path: 'table',
+        name: 'depart—manage',
+        component: () => import('@/views/table/index'),
+        meta: { title: '部门管理', icon: 'table' }
+      },
+      {
+        path: 'table',
+        name: 'menu—manage',
+        component: () => import('@/views/table/index'),
+        meta: { title: '菜单管理', icon: 'table' }
       },
       {
         path: 'tree',
@@ -69,6 +87,19 @@ export const constantRouterMap = [
         name: 'Form',
         component: () => import('@/views/form/index'),
         meta: { title: 'Form', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Form1',
+        component: () => import('@/views/form/index'),
+        meta: { title: '表单1', icon: 'form' }
       }
     ]
   },
